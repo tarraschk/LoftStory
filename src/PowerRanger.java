@@ -31,6 +31,7 @@ public class PowerRanger extends Neuneu{
 		
 	}
 	public MorganMagnin seTransformer() {
+		return null;
 		
 	}
 }
