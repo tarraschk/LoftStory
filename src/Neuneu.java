@@ -15,7 +15,7 @@ public abstract class Neuneu extends Aliment{
 	
 	public abstract void seDeplacer();
 	
-	public abstract void manger();
+	public abstract void manger(Aliment bouffe);
 	
 	public void seReproduire(){
 		
