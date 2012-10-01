@@ -168,7 +168,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + PowerRanger(string nom, string prenom, Genre genre, int qteEnerg, int qteRest, int[2] pos)\
+\f0\fs24 \cf0 + PowerRanger(string nom, string prenom, Genre genre, int qteEnerg, int[2] pos)\
 + seDeplacer() : void\
 + manger (Aliment bouffe) : void\
 + seTransforme() : MorganMagnin}</string>
@@ -305,7 +305,7 @@
 
 \f0\fs24 \cf0 + Loft(string nom, int[2] dim, LinkedList&lt;Aliment&gt; pop, int limTours)\
 + dessiner() : void\
-+ ajouter(Aliment objet) : int\
++ ajouter(Aliment objet) : void\
 + retirer(int id) : void\
 + lancerTour() : void}</string>
 						<key>VerticalPad</key>
@@ -397,7 +397,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + MorganMagnin(string nom, string prenom, Genre genre, int qteEnerg, int qteRest, int[2] pos)\
+\f0\fs24 \cf0 + MorganMagnin(string nom, string prenom, Genre genre, int qteEnerg, int[2] pos)\
 + seDeplacer() : void\
 + manger (Aliment bouffe) : void\
 + seTransforme() : PowerRanger}</string>
@@ -489,7 +489,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Eau(string nom, int qteEnerg, int qteRest, int[2] pos)}</string>
+\f0\fs24 \cf0 + Eau(int qteEnerg, int[2] pos)}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -578,7 +578,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + CordonBleu(string nom, int qteEnerg, int qteRest, int[2] pos)}</string>
+\f0\fs24 \cf0 + CordonBleu(int qteEnerg, int[2] pos)}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -667,7 +667,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Biere(string nom, int qteEnerg, int qteRest, int[2] pos)}</string>
+\f0\fs24 \cf0 + Biere(int qteEnerg, int[2] pos)}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -756,7 +756,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Chips(string nom, int qteEnerg, int qteRest, int[2] pos)}</string>
+\f0\fs24 \cf0 + Chips(int qteEnerg, int[2] pos)}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -845,7 +845,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Pates(string nom, int qteEnerg, int qteRest, int[2] pos)}</string>
+\f0\fs24 \cf0 + Pates(int qteEnerg, int[2] pos)}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -934,7 +934,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Banane(string nom, int qteEnerg, int qteRest, int[2] pos)}</string>
+\f0\fs24 \cf0 + Banane(int qteEnerg, int[2] pos)}</string>
 						<key>VerticalPad</key>
 						<integer>0</integer>
 					</dict>
@@ -963,8 +963,8 @@
 			<integer>75</integer>
 			<key>Points</key>
 			<array>
-				<string>{348.37081310773942, 262.67994807097892}</string>
-				<string>{592.02621545032434, 214.21226942594205}</string>
+				<string>{338.04974662559357, 262.6639942032337}</string>
+				<string>{605.91343450200316, 200.22781665789591}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1034,7 +1034,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{487, 88.1099853515625}, {412, 84}}</string>
+					<string>{{487, 88.1099853515625}, {412, 70}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1064,7 +1064,6 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
 \f0\fs24 \cf0 # identifiant : int\
-# nom : string\
 # quantiteEnergetique : int\
 # position : int[2]\
 # representationGraphique : int[3]\
@@ -1077,7 +1076,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{487, 172.1099853515625}, {412, 42}}</string>
+					<string>{{487, 158.1099853515625}, {412, 42}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -1106,7 +1105,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Aliment(string nom, int qteEnerg, int qteRest, int[2] pos) \{abstrait\}\
+\f0\fs24 \cf0 + Aliment(int qteEnerg, int[2] pos) \{abstrait\}\
 + afficher() : void\
 + estDetruit() : void}</string>
 						<key>VerticalPad</key>
@@ -1198,7 +1197,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Lapin(string nom, string prenom, Genre genre, int qteEnerg, int qteRest, int[2] pos)\
+\f0\fs24 \cf0 + Lapin(string nom, string prenom, Genre genre, int qteEnerg, int[2] pos)\
 + seDeplacer() : void\
 + manger (Aliment bouffe) : void}</string>
 						<key>VerticalPad</key>
@@ -1289,7 +1288,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Cannibale(string nom, string prenom, Genre genre, int qteEnerg, int qteRest, int[2] pos)\
+\f0\fs24 \cf0 + Cannibale(string nom, string prenom, Genre genre, int qteEnerg, int[2] pos)\
 + seDeplacer() : void\
 + manger (Aliment bouffe) : void}</string>
 						<key>VerticalPad</key>
@@ -1380,7 +1379,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Vorace(string nom, string prenom, Genre genre, int qteEnerg, int qteRest, int[2] pos)\
+\f0\fs24 \cf0 + Vorace(string nom, string prenom, Genre genre, int qteEnerg, int[2] pos)\
 + seDeplacer() : void\
 + manger (Aliment bouffe) : void}</string>
 						<key>VerticalPad</key>
@@ -1471,7 +1470,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Erratique(string nom, string prenom, Genre genre, int qteEnerg, int qteRest, int[2] pos)\
+\f0\fs24 \cf0 + Erratique(string nom, string prenom, Genre genre, int qteEnerg, int[2] pos)\
 + seDeplacer() : void\
 + manger (Aliment bouffe) : void}</string>
 						<key>VerticalPad</key>
@@ -1695,7 +1694,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720
 
-\f0\fs24 \cf0 + Neuneu(string nom, string prenom, Genre genre, int qteEnerg, int qteRest, int[2] pos) \{abstrait\}\
+\f0\fs24 \cf0 + Neuneu(string nom, string prenom, Genre genre, int qteEnerg, int[2] pos) \{abstrait\}\
 + seDeplacer() \{abstrait\}\
 + manger(Aliment bouffe) \{abstrait\}\
 + seReproduire() : void\
@@ -1730,8 +1729,8 @@
 			<integer>104</integer>
 			<key>Points</key>
 			<array>
-				<string>{888.62856555954545, 525.67902539106387}</string>
-				<string>{705.59444463295199, 214.54105854346622}</string>
+				<string>{888.79901411164121, 525.6746641347811}</string>
+				<string>{705.09969746775937, 200.5454057063335}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1767,8 +1766,8 @@
 			<integer>103</integer>
 			<key>Points</key>
 			<array>
-				<string>{733.91608588296526, 476.06014083723562}</string>
-				<string>{696.1041204324282, 214.60485178605168}</string>
+				<string>{733.96588187053942, 476.05968460638104}</string>
+				<string>{695.96179122586568, 200.60530549417319}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1804,8 +1803,8 @@
 			<integer>102</integer>
 			<key>Points</key>
 			<array>
-				<string>{881.04785341629702, 426.61061235091961}</string>
-				<string>{710.19266166789214, 214.49969976962112}</string>
+				<string>{881.36850897797149, 426.60215555127905}</string>
+				<string>{709.25802299062968, 200.50810721707964}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1841,8 +1840,8 @@
 			<integer>101</integer>
 			<key>Points</key>
 			<array>
-				<string>{733.35556291940873, 376.95664403484579}</string>
-				<string>{697.70186154097121, 214.59842937056186}</string>
+				<string>{733.46749869128871, 376.95515610635022}</string>
+				<string>{697.38338214311068, 200.59989772072737}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1878,8 +1877,8 @@
 			<integer>100</integer>
 			<key>Points</key>
 			<array>
-				<string>{877.00803918890506, 327.59519064009936}</string>
-				<string>{721.96926343745349, 214.40613746454858}</string>
+				<string>{877.8858152626907, 327.57710489100197}</string>
+				<string>{719.41304341478713, 200.42397897394642}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1915,8 +1914,8 @@
 			<integer>99</integer>
 			<key>Points</key>
 			<array>
-				<string>{731.46084701608845, 274.54835231399744}</string>
-				<string>{702.97105318308456, 214.56340471341201}</string>
+				<string>{731.94345493813125, 274.53730532192759}</string>
+				<string>{701.64971137186456, 200.57374374673878}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -2210,7 +2209,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2012-10-01 13:41:36 +0000</string>
+	<string>2012-10-01 14:29:49 +0000</string>
 	<key>Modifier</key>
 	<string>ALAY-EDDINE Maxime</string>
 	<key>NotesVisible</key>
