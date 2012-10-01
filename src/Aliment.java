@@ -10,14 +10,12 @@
 public abstract class Aliment {
 	
 	protected int identifiant;
-	protected String nom;
 	protected int quantiteEnergetique;
 	protected int[] position;
 	protected int[] representationGraphique;
 	protected Loft loft;
 	
-	public Aliment(String nom, int qteEnerg, int[] pos) {
-		this.nom = nom;
+	public Aliment(int qteEnerg, int[] pos) {
 		this.quantiteEnergetique = qteEnerg;
 		this.position = pos;
 	}
@@ -41,18 +39,6 @@ public abstract class Aliment {
 	 */
 	public void setIdentifiant(int identifiant) {
 		this.identifiant = identifiant;
-	}
-	/**
-	 * @return the nom
-	 */
-	public String getNom() {
-		return nom;
-	}
-	/**
-	 * @param nom the nom to set
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
 	}
 	/**
 	 * @return the quantiteEnergetique
