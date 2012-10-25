@@ -14,35 +14,41 @@ public class Loft {
 		this.dimensions = dim;
 		this.population = pop;
 		this.limiteNbTours = limTours;
+		this.cases = new Aliment[dim[0]][dim[1]];
 	}
 
 	public void dessiner(){
-
+		PixelLoft demo = new PixelLoft(this.dimensions);
+		demo.pack();
+		demo.setVisible(true);
 	}
 
 	public void ajouter(Aliment objet){
 		int idMax = 0;
-		for (Aliment obj : population){
+		for (Aliment obj : population) {
 			if (obj.identifiant>idMax)
 				idMax = obj.identifiant;
 		}
-		objet.identifiant = idMax+1;
-		this.population.add(objet);
+		if (objet instanceof Neuneu) {
+			objet.identifiant = idMax+1;
+			this.population.add(objet);
+		}
+		this.cases[objet.position[0]][objet.position[1]] = objet;
 	}
-	
+
 	public void retirer (int id){
-		for (Aliment obj : population) {
-			if (obj.identifiant == id) {
-				this.population.remove(obj);
+		for (int i = 0; i < population.size(); i++) {
+			if (population.get(i).identifiant == id) {
+				this.population.remove(i);
 			}
 		}
 	}
-	
+
 	public void lancerTour(){
-		for (Aliment obj : population) {
-			((Neuneu)obj).vivre();
-			}
+		for (int i = 0; i < population.size(); i++) {
+			((Neuneu)population.get(i)).vivre();
 		}
+	}
 
 	public String getNom() {
 		return nom;

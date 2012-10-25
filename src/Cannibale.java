@@ -19,13 +19,13 @@ public class Cannibale extends Neuneu{
 	 */
 	@Override
 	public void seDeplacer() {
-		int distanceMin = 0;
-		int [] positionMin = new int[2];
+		int distanceMin = this.loft.dimensions[0]+this.loft.dimensions[1];
+		int [] positionMin = {0, 0};
 		LinkedList<Aliment> population = this.loft.population;
 		int nvDistance = 0;
 		for (int i = 0; i<population.size(); i++) {
-			nvDistance = (int) (Math.pow(population.get(i).position[0]-this.position[0], 2)+Math.pow(population.get(i).position[1]-this.position[1], 2));
-			if (nvDistance >= distanceMin) {
+			nvDistance = Math.abs(population.get(i).position[0]-this.position[0])+Math.abs(population.get(i).position[1]-this.position[1]);
+			if (nvDistance <= distanceMin && nvDistance != 0) {
 				distanceMin = nvDistance;
 				positionMin[0] = population.get(i).position[0];
 				positionMin[1] = population.get(i).position[1];

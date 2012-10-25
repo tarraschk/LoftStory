@@ -62,29 +62,31 @@ public abstract class Neuneu extends Aliment{
 		}
 
 		Object legume = this.loft.cases[this.position[0]][this.position[1]];
-		if (legume instanceof Neuneu)
-			if ((this.genre.nom != ((Neuneu)legume).genre.nom) && !(this instanceof Cannibale))
-				this.seReproduire();
-			else if (this instanceof Cannibale)
-				this.manger((Aliment)legume);
-			else
-				this.etreExclu();
-		else {
-			boolean aime = false;
-			for (Aliment hab : this.habitudesAlimentaires) {
-				if (legume.getClass() == hab.getClass()) {
-					aime = true;
+		if (legume != null) {
+			if (legume instanceof Neuneu)
+				if ((this.genre.nom != ((Neuneu)legume).genre.nom) && !(this instanceof Cannibale))
+					this.seReproduire();
+				else if (this instanceof Cannibale)
+					this.manger((Aliment)legume);
+				else
+					this.etreExclu();
+			else {
+				boolean aime = false;
+				for (Aliment hab : this.habitudesAlimentaires) {
+					if (legume.getClass() == hab.getClass()) {
+						aime = true;
+					}
 				}
-			}
-			if (aime) {
-				this.manger((Aliment)legume);
+				if (aime) {
+					this.manger((Aliment)legume);
+				}
 			}
 		}
 	}
 
 	public void etreExclu(){
 		super.estDetruit();
-		this.loft.population.remove(this);	
+		this.loft.retirer(this.identifiant);	
 	}
 
 	public String getNom() {
