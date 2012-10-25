@@ -25,7 +25,7 @@ public abstract class Aliment {
 	}
 	
 	void estDetruit() {
-		
+		this.loft.cases[this.position[0]][this.position[1]]=null;
 	}
 	
 	/**
@@ -87,7 +87,5 @@ public abstract class Aliment {
 	 */
 	public void setLoft(Loft loft) {
 		this.loft = loft;
-	}
-	
-	
+	}	
 }
