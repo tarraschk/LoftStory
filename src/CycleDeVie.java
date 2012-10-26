@@ -1,5 +1,6 @@
 import java.util.LinkedList;
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class CycleDeVie {
 
@@ -7,7 +8,7 @@ public class CycleDeVie {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		
 		int[] dimensions = {20, 20};
 		int limiteNbTours = 100;
 		LinkedList<Aliment> population = new LinkedList<Aliment>();
@@ -100,13 +101,31 @@ public class CycleDeVie {
 		lapinne.habitudesAlimentaires = new Aliment[1];
 		lapinne.habitudesAlimentaires[0] = eau;
 
+		loftMain.ajouter(banana);
+		loftMain.ajouter(biere);
+		loftMain.ajouter(eau);
+		loftMain.ajouter(cordonbleu);
+		loftMain.ajouter(pate);
+		
 		loftMain.ajouter(erratique1);
 		loftMain.ajouter(erratique2);
 		loftMain.ajouter(cannibale1);
 		loftMain.ajouter(cannibale2);
 		loftMain.ajouter(vorace);
 		loftMain.ajouter(lapinne);
-
+		
+//		class LoftTimerTask extends TimerTask {
+//			@Override
+//			public void run() {
+//				loftMain.lancerTour();
+//				loftMain.dessiner();
+//				limiteNbTours--;
+//			}
+//		};
+//		Timer refreshTimer = new Timer();
+//		LoftTimerTask refreshTask = new LoftTimerTask();
+//		refreshTimer.scheduleAtFixedRate(refreshTask, 0, 1000);
+		
 		while (limiteNbTours != 0 && loftMain.population.size() != 1) {
 			loftMain.lancerTour();
 			loftMain.dessiner();
