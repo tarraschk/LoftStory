@@ -24,7 +24,7 @@ public class Loft {
 	}
 
 	public void dessiner(){
-		PixelLoft demo = new PixelLoft(this.dimensions);
+		PixelLoft demo = new PixelLoft(this.dimensions, this);
 		demo.pack();
 		demo.setVisible(true);
 	}
