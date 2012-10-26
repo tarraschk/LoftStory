@@ -35,6 +35,9 @@ public class Lapin extends Neuneu{
 			this.quantiteEnergetique = 0;
 		else {
 			this.quantiteEnergetique -= nvDistance;
+			
+			this.estDetruit();
+			this.loft.cases[positionMin[0]][positionMin[1]].add(this);
 			this.position[0] = positionMin[0];
 			this.position[1] = positionMin[1];
 		}		

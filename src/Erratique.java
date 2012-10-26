@@ -17,6 +17,7 @@ public class Erratique extends Neuneu{
 	 */
 	@Override
 	public void seDeplacer() {
+		this.estDetruit();
 		for (int i = 0; i < 10; i++) {
 			double choix = 10*Math.random();
 			if (0<=choix && choix<=4)
@@ -42,8 +43,10 @@ public class Erratique extends Neuneu{
 		}
 		if (this.quantiteEnergetique <= 10)
 			this.quantiteEnergetique = 0;
-		else
+		else {
 			this.quantiteEnergetique -= 10;
+			this.loft.cases[this.position[0]][this.position[1]].add(this);
+		}
 	}
 	/* (non-Javadoc)
 	 * @see Neuneu#manger(Aliment)

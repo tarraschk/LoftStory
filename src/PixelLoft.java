@@ -20,7 +20,7 @@ public class PixelLoft extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		c = getContentPane();
 		JPanel panel = new LoftPanel(dim);
-		panel.setPreferredSize(new Dimension(dim[0]*3, dim[1]*3));
+		panel.setPreferredSize(new Dimension(dim[0]*9, dim[1]*9));
 		c.add(panel);
 	}
 
@@ -31,8 +31,8 @@ public class PixelLoft extends JFrame {
 
 		public LoftPanel(int[] dim) {
 			super();
-			width = dim[0]*3;
-			height = dim[1]*3;
+			width = dim[0]*9;
+			height = dim[1]*9;
 		}
 
 		public void paint(Graphics g) {
@@ -40,8 +40,8 @@ public class PixelLoft extends JFrame {
 			int imgHeight = height;
 			img = new BufferedImage(imgWidth, imgHeight, BufferedImage.TYPE_INT_ARGB);
 
-			for (int i = 1; i < imgWidth-1; i += 3) {
-				for (int j = 1; j < imgHeight-1; j += 3) {
+			for (int i = 4; i < imgWidth-1; i += 9) {
+				for (int j = 4; j < imgHeight-1; j += 9) {
 					int col = (j % 2==0?Color.BLACK.getRGB():Color.WHITE.getRGB());
 					img.setRGB(i, j, col);
 				}

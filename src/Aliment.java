@@ -25,7 +25,7 @@ public abstract class Aliment {
 	}
 	
 	void estDetruit() {
-		this.loft.cases[this.position[0]][this.position[1]]=null;
+		this.loft.cases[this.position[0]][this.position[1]].remove(this);
 	}
 	
 	/**

@@ -18,7 +18,7 @@ public abstract class Neuneu extends Aliment{
 	public abstract void manger(Aliment bouffe);
 
 	public void seReproduire(){
-		Aliment var = this.loft.cases[this.position[0]][this.position[1]];
+		Aliment var = this.loft.cases[this.position[0]][this.position[1]].getFirst();
 		int [] posVide = new int[2];
 		boolean posTrouvee = false;
 		for (int i=0; i<this.loft.dimensions[0]; i++) {
@@ -37,7 +37,7 @@ public abstract class Neuneu extends Aliment{
 			genre.nom = (Math.random() > 0.5)? "Feminin":"Masculin";
 			Erratique petit = new Erratique(this.nom, ((Neuneu) var).prenom, genre, 100, posVide);
 			this.loft.population.add(petit);
-			this.loft.cases[posVide[0]][posVide[1]] = petit;
+			this.loft.cases[posVide[0]][posVide[1]].add(petit);
 			if (var.quantiteEnergetique == 0)
 				((Neuneu) var).etreExclu();
 			if (this.quantiteEnergetique == 0)
@@ -60,8 +60,12 @@ public abstract class Neuneu extends Aliment{
 			this.etreExclu();
 			return;
 		}
-
-		Object legume = this.loft.cases[this.position[0]][this.position[1]];
+		
+		Object legume;
+		if (this.loft.cases[this.position[0]][this.position[1]].size() != 0)
+			legume = this.loft.cases[this.position[0]][this.position[1]].getFirst();
+		else
+			legume = null;
 		if (legume != null) {
 			if (legume instanceof Neuneu)
 				if ((this.genre.nom != ((Neuneu)legume).genre.nom) && !(this instanceof Cannibale))

@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 
 
 public class Vorace extends Neuneu{
@@ -10,16 +12,18 @@ public class Vorace extends Neuneu{
 	public void seDeplacer() {
 		int distanceMin = this.loft.dimensions[0]+this.loft.dimensions[1];
 		int [] positionMin = new int[2];
-		Aliment[][] cases = this.loft.cases;
+		LinkedList<Aliment>[][] cases = this.loft.cases;
 		int nvDistance = 0;
 		for (int i = 0; i<this.loft.dimensions[0]; i++) {
 			for (int j = 0; j<this.loft.dimensions[1]; j++) {
-				if (cases[i][j] != null && !(cases[i][j] instanceof Neuneu)) {
-					nvDistance = Math.abs(i-this.position[0])+Math.abs(j-this.position[1]);
-					if (nvDistance <= distanceMin && nvDistance != 0) {
-						distanceMin = nvDistance;
-						positionMin[0] = i;
-						positionMin[1] = j;
+				if (cases[i][j].size() != 0) {
+					if (!(cases[i][j].getFirst() instanceof Neuneu)) {
+						nvDistance = Math.abs(i-this.position[0])+Math.abs(j-this.position[1]);
+						if (nvDistance <= distanceMin && nvDistance != 0) {
+							distanceMin = nvDistance;
+							positionMin[0] = i;
+							positionMin[1] = j;
+						}
 					}
 				}
 			}
@@ -29,11 +33,15 @@ public class Vorace extends Neuneu{
 				this.quantiteEnergetique = 0;
 			else {
 				this.quantiteEnergetique -= nvDistance;
+
+				this.estDetruit();
+				this.loft.cases[positionMin[0]][positionMin[1]].add(this);
 				this.position[0] = positionMin[0];
 				this.position[1] = positionMin[1];
 			}
 		}
 		else {
+			this.estDetruit();
 			for (int i = 0; i < 10; i++) {
 				double choix = 10*Math.random();
 				if (0<=choix && choix<=4)
@@ -59,8 +67,10 @@ public class Vorace extends Neuneu{
 			}
 			if (this.quantiteEnergetique <= 10)
 				this.quantiteEnergetique = 0;
-			else
+			else {
 				this.quantiteEnergetique -= 10;
+				this.loft.cases[this.position[0]][this.position[1]].add(this);
+			}
 		}
 	}
 
