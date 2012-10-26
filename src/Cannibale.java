@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.LinkedList;
 
 /**
@@ -12,6 +13,12 @@ import java.util.LinkedList;
 public class Cannibale extends Neuneu{
 	public Cannibale(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		super(nom, prenom, genre, qteEnerg, pos);
+		int[][] tabColors = {
+				{Color.black.getRGB(), Color.black.getRGB(), Color.black.getRGB()},
+				{Color.black.getRGB(), Color.black.getRGB(), Color.black.getRGB()},
+				{Color.black.getRGB(), Color.black.getRGB(), Color.black.getRGB()}
+		};
+		this.representationGraphique = tabColors;
 	}
 
 	/* (non-Javadoc)

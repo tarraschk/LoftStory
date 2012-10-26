@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 /**
  * 1 oct. 2012 by  maxime
  * LoftStory
@@ -10,6 +12,12 @@
 public class Erratique extends Neuneu{
 	public Erratique(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		super(nom, prenom, genre, qteEnerg, pos);
+		int[][] tabColors = {
+				{Color.gray.getRGB(), Color.gray.getRGB(), Color.gray.getRGB()},
+				{Color.gray.getRGB(), Color.gray.getRGB(), Color.gray.getRGB()},
+				{Color.gray.getRGB(), Color.gray.getRGB(), Color.gray.getRGB()}
+		};
+		this.representationGraphique = tabColors;
 	}
 
 	/* (non-Javadoc)

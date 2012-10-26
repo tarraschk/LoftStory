@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.LinkedList;
 
 
@@ -6,6 +7,12 @@ public class Vorace extends Neuneu{
 
 	public Vorace(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		super(nom,prenom, genre, qteEnerg, pos);
+		int[][] tabColors = {
+				{Color.red.getRGB(), Color.red.getRGB(), Color.red.getRGB()},
+				{Color.red.getRGB(), Color.red.getRGB(), Color.red.getRGB()},
+				{Color.red.getRGB(), Color.red.getRGB(), Color.red.getRGB()}
+		};
+		this.representationGraphique = tabColors;
 	}
 
 	@Override

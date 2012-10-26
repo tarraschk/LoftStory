@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.LinkedList;
 
 /**
@@ -12,6 +13,12 @@ import java.util.LinkedList;
 public class Lapin extends Neuneu{
 	public Lapin(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		super(nom, prenom, genre, qteEnerg, pos);
+		int[][] tabColors = {
+				{Color.pink.getRGB(), Color.white.getRGB(), Color.pink.getRGB()},
+				{Color.white.getRGB(), Color.pink.getRGB(), Color.white.getRGB()},
+				{Color.pink.getRGB(), Color.white.getRGB(), Color.pink.getRGB()}
+		};
+		this.representationGraphique = tabColors;
 	}
 
 	/* (non-Javadoc)

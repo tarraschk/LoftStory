@@ -12,7 +12,7 @@ public abstract class Aliment {
 	protected int identifiant;
 	protected int quantiteEnergetique;
 	protected int[] position;
-	protected int[] representationGraphique;
+	protected int[][] representationGraphique;
 	protected Loft loft;
 	
 	public Aliment(int qteEnerg, int[] pos) {
@@ -20,11 +20,7 @@ public abstract class Aliment {
 		this.position = pos;
 	}
 	
-	void afficher() {
-		
-	}
-	
-	void estDetruit() {
+	public void estDetruit() {
 		this.loft.cases[this.position[0]][this.position[1]].remove(this);
 	}
 	
@@ -67,13 +63,13 @@ public abstract class Aliment {
 	/**
 	 * @return the representationGraphique
 	 */
-	public int[] getRepresentationGraphique() {
+	public int[][] getRepresentationGraphique() {
 		return representationGraphique;
 	}
 	/**
 	 * @param representationGraphique the representationGraphique to set
 	 */
-	public void setRepresentationGraphique(int[] representationGraphique) {
+	public void setRepresentationGraphique(int[][] representationGraphique) {
 		this.representationGraphique = representationGraphique;
 	}
 	/**

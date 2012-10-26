@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 /**
  * 1 oct. 2012 by  maxime
  * LoftStory
@@ -11,6 +13,12 @@ public class PowerRanger extends Neuneu{
 	private int toursRestants;
 	public PowerRanger(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		super(nom, prenom, genre, qteEnerg, pos);
+		int[][] tabColors = {
+				{Color.green.getRGB(), Color.green.getRGB(), Color.green.getRGB()},
+				{Color.green.getRGB(), Color.pink.getRGB(), Color.green.getRGB()},
+				{Color.green.getRGB(), Color.green.getRGB(), Color.green.getRGB()}
+		};
+		this.representationGraphique = tabColors;
 		this.setToursRestants((int) (Math.random() * 10));
 	}
 
