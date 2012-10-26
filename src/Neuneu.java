@@ -5,7 +5,6 @@ public abstract class Neuneu extends Aliment{
 	protected String prenom;
 	protected Genre genre;
 	protected Aliment[] habitudesAlimentaires;
-
 	public Neuneu(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		super(qteEnerg, pos);
 		this.nom = nom;
