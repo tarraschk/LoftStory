@@ -5,6 +5,11 @@ public abstract class Neuneu extends Aliment{
 	protected String prenom;
 	protected Genre genre;
 	protected Aliment[] habitudesAlimentaires;
+	protected String[][] prenomsListe = {
+				{"Jean", "Edouard", "Thierry", "Michel", "Rantanplan"},
+				{"Jeanne", "Edouardette", "Thierryette", "Michèle", "Pocahontas"}
+			};
+	protected String[] nomsListe = {"Adla", "Kikoolol", "Lolo", "Lala", "Ibulaire", "Parriot", "Mbele", "Ouemba", "Aladin"};
 	
 	public Neuneu(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		super(qteEnerg, pos);
@@ -52,6 +57,11 @@ public abstract class Neuneu extends Aliment{
 	}
 	public void setHabitudesAlimentaires(Aliment[] habitudesAlimentaires) {
 		this.habitudesAlimentaires = habitudesAlimentaires;
+	}
+	
+	public Neuneu generer() {
+		int genreNum = (int) (Math.random()*2);
+		return new Neuneu(nomsListe[genreNum][Math.random()*2], prenom, genreNum, qteEnerg, pos);
 	}
 
 }
