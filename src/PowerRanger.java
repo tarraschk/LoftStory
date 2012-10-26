@@ -31,6 +31,7 @@ public class PowerRanger extends Neuneu{
 		// TODO Auto-generated method stub
 		
 	}
+
 	public MorganMagnin seTranformer(String nom, String prenom, Genre genre, int qteEnerg, int[] pos){
 		return new MorganMagnin(nom, prenom, genre, qteEnerg, pos);
 	}
