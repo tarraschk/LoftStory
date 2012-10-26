@@ -9,7 +9,7 @@ public class CycleDeVie {
 	public static void main(String[] args) {
 
 		int[] dimensions = {20, 20};
-		int limiteNbTours = 1;
+		int limiteNbTours = 100;
 		LinkedList<Aliment> population = new LinkedList<Aliment>();
 		Loft loftMain = new Loft("Essai", dimensions, population, limiteNbTours);
 
@@ -109,7 +109,7 @@ public class CycleDeVie {
 
 		while (limiteNbTours != 0 && loftMain.population.size() != 1) {
 			loftMain.lancerTour();
-			//loftMain.dessiner();
+			loftMain.dessiner();
 			limiteNbTours--;
 		}
 
