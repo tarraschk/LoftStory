@@ -9,6 +9,10 @@ import javax.swing.JPanel;
 
 
 public class PixelLoft extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Container c;
 
 	public PixelLoft(int[] dim) {
@@ -25,6 +29,10 @@ public class PixelLoft extends JFrame {
 	}
 
 	class LoftPanel extends JPanel {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		private BufferedImage img;
 		private int width;
 		private int height;
