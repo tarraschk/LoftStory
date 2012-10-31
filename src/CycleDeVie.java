@@ -109,39 +109,17 @@ public class CycleDeVie {
 		
 		loftMain.ajouter(erratique1);
 		loftMain.ajouter(erratique2);
-		loftMain.ajouter(cannibale1);
-		loftMain.ajouter(cannibale2);
-		loftMain.ajouter(vorace);
-		loftMain.ajouter(lapinne);
+//		loftMain.ajouter(cannibale1);
+//		loftMain.ajouter(cannibale2);
+//		loftMain.ajouter(vorace);
+//		loftMain.ajouter(lapinne);
 		
-//		class LoftTimerTask extends TimerTask {
-//			@Override
-//			public void run() {
-//				loftMain.lancerTour();
-//				loftMain.dessiner();
-//				limiteNbTours--;
-//			}
-//		};
-//		Timer refreshTimer = new Timer();
-//		LoftTimerTask refreshTask = new LoftTimerTask();
-//		refreshTimer.scheduleAtFixedRate(refreshTask, 0, 1000);
+		Timer refreshTimer = new Timer();
+		LoftTimerTask refreshTask = new LoftTimerTask();
+		refreshTask.limiteNbTours = limiteNbTours;
+		refreshTask.loftMain = loftMain;
+		refreshTimer.scheduleAtFixedRate(refreshTask, 0, 5000);
 		
-		while (limiteNbTours != 0 && loftMain.population.size() != 1) {
-			loftMain.lancerTour();
-			loftMain.dessiner();
-			limiteNbTours--;
-		}
-
-		if (loftMain.population.size() == 1) {
-			System.out.println("Et le vainqueur est ... " + ((Neuneu)loftMain.population.getFirst()).nom);
-		}
-		else if (limiteNbTours == 0){
-			System.out.println("Nombre de vainqueurs: " + String.valueOf(loftMain.population.size()));
-			for (int i = 0; i<loftMain.population.size(); i++) {
-				System.out.println("Vainqueur " + String.valueOf(i+1) + ": " + ((Neuneu)loftMain.population.get(i)).nom);
-			}
-		}
-
 		System.out.println("Tout est ok !");
 	}
 }

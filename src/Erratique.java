@@ -28,26 +28,30 @@ public class Erratique extends Neuneu{
 		this.estDetruit();
 		for (int i = 0; i < 10; i++) {
 			double choix = 10*Math.random();
-			if (0<=choix && choix<=4)
+			if (0<=choix && choix<=4) {
 				if (this.position[1]-1 >= 0)
 					this.position[1]--;
 				else
 					this.position[1]++;
-			if (5<=choix && choix<=9)
+			}
+			else if (5<=choix && choix<=9) {
 				if (this.position[0]+1 < this.loft.dimensions[0])
 					this.position[0]++;
 				else
 					this.position[0]--;
-			if (10<=choix && choix<=14)
+			}
+			else if (10<=choix && choix<=14) {
 				if (this.position[1]+1 < this.loft.dimensions[1])
 					this.position[1]++;
 				else
 					this.position[1]--;
-			if (15<=choix && choix<=19)
+			}
+			else if (15<=choix && choix<=19) {
 				if (this.position[0]-1 >= 0)
 					this.position[0]--;
 				else
 					this.position[0]++;
+			}
 		}
 		if (this.quantiteEnergetique <= 10)
 			this.quantiteEnergetique = 0;

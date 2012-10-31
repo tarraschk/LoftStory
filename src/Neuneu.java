@@ -66,13 +66,14 @@ public abstract class Neuneu extends Aliment{
 		else
 			legume = null;
 		if (legume != null) {
-			if (legume instanceof Neuneu)
+			if (legume instanceof Neuneu) {
 				if ((this.genre.nom != ((Neuneu)legume).genre.nom) && !(this instanceof Cannibale))
 					this.seReproduire();
 				else if (this instanceof Cannibale)
 					this.manger((Aliment)legume);
 				else
 					this.etreExclu();
+			}
 			else {
 				boolean aime = false;
 				for (Aliment hab : this.habitudesAlimentaires) {
