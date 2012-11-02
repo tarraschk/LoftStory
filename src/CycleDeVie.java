@@ -111,14 +111,16 @@ public class CycleDeVie {
 		loftMain.ajouter(erratique2);
 //		loftMain.ajouter(cannibale1);
 //		loftMain.ajouter(cannibale2);
-//		loftMain.ajouter(vorace);
-//		loftMain.ajouter(lapinne);
+		loftMain.ajouter(vorace);
+		loftMain.ajouter(lapinne);
 		
 		Timer refreshTimer = new Timer();
 		LoftTimerTask refreshTask = new LoftTimerTask();
 		refreshTask.limiteNbTours = limiteNbTours;
 		refreshTask.loftMain = loftMain;
 		refreshTimer.scheduleAtFixedRate(refreshTask, 0, 5000);
+
+
 		
 		System.out.println("Tout est ok !");
 	}
